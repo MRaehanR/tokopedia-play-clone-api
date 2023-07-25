@@ -252,7 +252,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "body": {
+                  "text": {
                     "type": "string",
                     "example": "Mouse nomor 1 kak!"
                   }
@@ -428,7 +428,7 @@
             "type": "string",
             "example": "MRaehanR"
           },
-          "message": {
+          "text": {
             "type": "string",
             "example": "Murah Banget Kak!"
           },
