@@ -1,8 +1,8 @@
 import express from "express";
 import swaggerRoute from "../configs/swagger.js";
 
-const docsRoute = express.Router();
+const docsRoutes = express.Router();
 
-docsRoute.use(swaggerRoute);
+docsRoutes.use(swaggerRoute);
 
-export default docsRoute;
+export default docsRoutes;

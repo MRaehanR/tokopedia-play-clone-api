@@ -1,19 +1,13 @@
 import express from "express";
-import docsRoute from "./docs-route.js";
+import docsRoutes from "./docs-route.js";
+import apiRoutes from "./api/index.js";
 
 const router = express.Router();
 
-const devRoutes = [
-  {
-    path: "/docs",
-    route: docsRoute
-  }
-];
+router.use("/api", apiRoutes);
 
 if (process.env.ENV === "development") {
-  devRoutes.forEach((route) => {
-    router.use(route.path, route.route);
-  });
+  router.use("/docs", docsRoutes);
 }
 
 export default router;
