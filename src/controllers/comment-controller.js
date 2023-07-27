@@ -7,7 +7,7 @@ class CommentController {
       const username = req.body.username;
       const text = req.body.text;
 
-      const comment = await CommentService.addComsment({ videoId, username, text });
+      const comment = await CommentService.addComment({ videoId, username, text });
 
       res.success({
         code: 201,
