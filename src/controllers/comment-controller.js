@@ -12,7 +12,7 @@ class CommentController {
 
       res.success({
         code: 201,
-        message: "Success Add Video",
+        message: "Success Added Video",
         data: {
           id: comment._id,
           username: comment.username,
@@ -44,7 +44,7 @@ class CommentController {
       });
 
       res.success({
-        message: "Success Get All Comments By VideoID",
+        message: "Success Get All Comments",
         data: data
       });
     } catch (error) {

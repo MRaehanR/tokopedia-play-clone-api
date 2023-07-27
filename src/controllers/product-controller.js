@@ -13,7 +13,7 @@ class ProductController {
 
       res.success({
         code: 201,
-        message: "Success Add Video",
+        message: "Success Added Product",
         data: {
           id: product._id,
           title: product.title,
@@ -42,12 +42,12 @@ class ProductController {
           title: product.title,
           imgUrl: product.imgUrl,
           price: product.price,
-          price_format: `Rp. ${product.price}`
+          priceFormat: `Rp. ${product.price}`
         });
       });
 
       res.success({
-        message: "Success Get All Products By VideoID",
+        message: "Success Get All Products",
         data: data
       });
     } catch (error) {

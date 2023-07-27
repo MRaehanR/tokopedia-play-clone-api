@@ -33,7 +33,7 @@ class VideoController {
 
       res.success({
         code: 201,
-        message: "Success Add Video",
+        message: "Success Added Video",
         data: {
           id: video._id,
           title: video.title,
