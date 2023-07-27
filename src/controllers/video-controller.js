@@ -3,7 +3,9 @@ import VideoService from "../services/video-service.js";
 class VideoController {
   static async getAllVideos(req, res, next) {
     try {
-      const videos = await VideoService.getAllVideos();
+      const search = req.query.search;
+
+      const videos = await VideoService.getAllVideos(search);
       const data = [];
 
       videos.forEach((video) => {
