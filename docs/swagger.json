@@ -479,6 +479,10 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "username": {
+                    "type": "string",
+                    "example": "MRaehanR"
+                  },
                   "text": {
                     "type": "string",
                     "example": "Mouse nomor 1 kak!"
@@ -641,7 +645,7 @@
           },
           "timestamp": {
             "type": "string",
-            "example": "1 jam lalu"
+            "example": "2023-07-26T12:03:18.273Z"
           }
         }
       },

@@ -29,15 +29,13 @@ Schema for videos
     id: ObjectId
     title: string
     imgUrl: string
-    links: [
-        video_detail: string
-    ]
+    videoUrl: string
 }
 ```
 
 ## GET /videos
 
-Return all videos
+Return All Videos
 
 - Query Params
   - search\
@@ -89,6 +87,58 @@ Return all videos
 }
 ```
 
+## POST /videos
+
+Return Added Video
+
+- Path Params
+  - videoId\
+    required: true\
+    example: http://localhost:3000/videos/jhkasd0jhkjh234ks
+- Headers\
+  Content-Type: application/json
+- Responses
+
+##### ✅ 200 Success Added Video
+
+```
+{
+  "status": true,
+  "code": 200,
+  "message": "Success Added Video",
+  "data": {
+    "id": "VideoID01",
+    "title": "Diskon Peripheral Gaming",
+    "imgUrl": "https://localhost:3000/images/diskon-peripheral-gaming.jpg",
+    "videoUrl": "https://localhost:3000/api/videos/asodiuhjas890u123"
+  }
+}
+```
+
+##### ❌ 400 Failed to Add Video
+
+```
+{
+  "status": false,
+  "code": 400,
+  "message": "Failed to Add Video",
+  "data": [],
+  "errors": []
+}
+```
+
+##### ❌ 500 Internal Server Error
+
+```
+{
+  "status": false,
+  "code": 500,
+  "message": "Internal Server Error",
+  "data": [],
+  "errors": []
+}
+```
+
 ## Products
 
 Schema for Products
@@ -96,20 +146,17 @@ Schema for Products
 ```
 {
     id: ObjectId
-    video_id: ObjectId
+    videoId: ObjectId
     title: string
     imgUrl: string
     price: number
-    price_format: string
-    links: [
-        product_detail: string
-    ]
+    priceFormat: string
 }
 ```
 
 ## GET /products/{videoID}
 
-Return all products
+Return All Products
 
 - Path Params
   - videoID\
@@ -129,11 +176,11 @@ Return all products
   "data": [
     {
       "id": "ProductID01",
-      "video_id": "VideoID01",
+      "videoId": "VideoID01",
       "title": "Mouse Gaming Murah",
       "imgUrl": "https://localhost:3000/images/mouse-gaming-murah.jpg",
       "price": 20000,
-      "price_format": "Rp. 20.000",
+      "priceFormat": "Rp. 20.000",
     }
   ]
 }
@@ -163,6 +210,62 @@ Return all products
 }
 ```
 
+## POST /products/{videoID}
+
+Return Added Product
+
+- Path Params
+  - videoID\
+    required: true\
+    example: http://localhost:3000/videos/videoID01
+- Headers\
+  Content-Type: application/json
+- Responses
+
+##### ✅ 200 Success Added Product
+
+```
+{
+  "status": true,
+  "code": 200,
+  "message": "Success Added Product",
+  "data": [
+    {
+      "id": "ProductID01",
+      "videoId": "VideoID01",
+      "title": "Mouse Gaming Murah",
+      "imgUrl": "https://localhost:3000/images/mouse-gaming-murah.jpg",
+      "price": 20000,
+      "priceFormat": "Rp. 20.000",
+    }
+  ]
+}
+```
+
+##### ❌ 400 Failed to Add Video
+
+```
+{
+  "status": false,
+  "code": 400,
+  "message": "Failed to Add Product",
+  "data": [],
+  "errors": []
+}
+```
+
+##### ❌ 500 Internal Server Error
+
+```
+{
+  "status": false,
+  "code": 500,
+  "message": "Internal Server Error",
+  "data": [],
+  "errors": []
+}
+```
+
 ## Comments
 
 Schema for Comments
@@ -170,16 +273,16 @@ Schema for Comments
 ```
 {
     id: ObjectId
-    video_id: ObjectId
+    videoId: ObjectId
     username: string
-    message: string
+    text: string
     timestamp: string
 }
 ```
 
 ## GET /comments/{videoID}
 
-Return all products
+Return All Comments
 
 - Path Params
   - videoID\
@@ -199,7 +302,7 @@ Return all products
   "data": [
     {
       "id": "CommentID01",
-      "video_id": "VideoID01",
+      "videoId": "VideoID01",
       "username": "MRaehanR",
       "text": "Murah Banget Kak!",
       "timestamp": "2023-07-26T12:03:18.273Z"
@@ -234,7 +337,7 @@ Return all products
 
 ## POST /comments/{videoID}
 
-Return all products
+Return Posted Comment
 
 - Path Params
   - videoID\
@@ -246,26 +349,27 @@ Return all products
 
 ```
 {
+    "username": "MRaehanR",
     "text": "Mouse nomor 1 kak!"
 }
 ```
 
 - Responses
 
-##### ✅ 200 Success Get All Comments
+##### ✅ 200 Success Added Comment
 
 ```
 {
   "status": true,
   "code": 200,
-  "message": "Success Get All Comments",
+  "message": "Success Added Comment",
   "data": [
     {
       "id": "CommentID01",
-      "video_id": "VideoID01",
+      "videoId": "VideoID01",
       "username": "MRaehanR",
-      "message": "Murah Banget Kak!",
-      "timestamp": "1 jam lalu"
+      "text": "Murah Banget Kak!",
+      "timestamp": "2023-07-26T12:03:18.273Z"
     }
   ]
 }
