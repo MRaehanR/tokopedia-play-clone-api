@@ -358,17 +358,9 @@
             "type": "string",
             "example": "https://localhost:3000/images/diskon-peripheral-gaming.jpg"
           },
-          "links": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "video_detail": {
-                  "type": "string",
-                  "example": "https://localhost:3000/api/videos/asodiuhjas890u123"
-                }
-              }
-            }
+          "videoUrl": {
+            "type": "string",
+            "example": "https://localhost:3000/videos/jasd89023nasd90s"
           }
         }
       },
@@ -398,18 +390,6 @@
           "price_format": {
             "type": "string",
             "example": "Rp. 20.000"
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "product_detail": {
-                  "type": "string",
-                  "example": "https://localhost:3000/api/videos/asodiuhjas890u123"
-                }
-              }
-            }
           }
         }
       },

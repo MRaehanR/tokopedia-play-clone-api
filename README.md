@@ -59,11 +59,7 @@ Return all videos
       "id": "VideoID01",
       "title": "Diskon Peripheral Gaming",
       "imgUrl": "https://localhost:3000/images/diskon-peripheral-gaming.jpg",
-      "links": [
-        {
-          "video_detail": "https://localhost:3000/api/videos/asodiuhjas890u123"
-        }
-      ]
+      "videoUrl": "https://localhost:3000/api/videos/asodiuhjas890u123"
     }
   ]
 }
@@ -138,11 +134,6 @@ Return all products
       "imgUrl": "https://localhost:3000/images/mouse-gaming-murah.jpg",
       "price": 20000,
       "price_format": "Rp. 20.000",
-      "links": [
-        {
-          "product_detail": "https://localhost:3000/api/videos/asodiuhjas890u123"
-        }
-      ]
     }
   ]
 }
@@ -211,7 +202,7 @@ Return all products
       "video_id": "VideoID01",
       "username": "MRaehanR",
       "text": "Murah Banget Kak!",
-      "timestamp": "1 jam lalu"
+      "timestamp": "2023-07-26T12:03:18.273Z"
     }
   ]
 }

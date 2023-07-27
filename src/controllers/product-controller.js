@@ -36,6 +36,7 @@ class ProductController {
       products.forEach((product) => {
         data.push({
           id: product._id,
+          videoId: product.video_id,
           title: product.title,
           imgUrl: product.url_thumbnail,
           price: product.price,
