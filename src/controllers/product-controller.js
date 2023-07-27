@@ -1,3 +1,4 @@
+import { loggerFile } from "../configs/logger.js";
 import ProductService from "../services/product-service.js";
 
 class ProductController {
@@ -22,6 +23,7 @@ class ProductController {
         }
       });
     } catch (error) {
+      loggerFile.error(error);
       next(error);
     }
   }
@@ -49,6 +51,7 @@ class ProductController {
         data: data
       });
     } catch (error) {
+      loggerFile.error(error);
       next(error);
     }
   }

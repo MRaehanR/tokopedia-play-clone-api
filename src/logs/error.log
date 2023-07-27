@@ -1,2 +1,10 @@
 {"level":"error"}
 {"level":"error"}
+[2023-07-27 04:45:43.795 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
+{"level":"error","timestamp":"2023-07-27 04:45:43.795 PM"}
+[2023-07-27 04:46:13.997 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
+[2023-07-27 04:46:34.838 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
+[2023-07-27 04:49:16.642 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
+[2023-07-27 04:59:28.260 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
+[2023-07-27 05:02:02.266 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
+[2023-07-27 05:03:27.080 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 33)]

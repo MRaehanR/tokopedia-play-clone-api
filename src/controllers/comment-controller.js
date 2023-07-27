@@ -1,3 +1,4 @@
+import { loggerFile } from "../configs/logger.js";
 import CommentService from "../services/comment-service.js";
 
 class CommentController {
@@ -20,6 +21,7 @@ class CommentController {
         }
       });
     } catch (error) {
+      loggerFile.error(error);
       next(error);
     }
   }
@@ -46,6 +48,7 @@ class CommentController {
         data: data
       });
     } catch (error) {
+      loggerFile.error(error);
       next(error);
     }
   }
