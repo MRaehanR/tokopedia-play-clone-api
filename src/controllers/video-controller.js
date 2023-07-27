@@ -17,7 +17,7 @@ class VideoController {
 
       res.success({ message: "Success Get All Videos", data: data });
     } catch (error) {
-      next();
+      next(error);
     }
   }
 
@@ -40,7 +40,7 @@ class VideoController {
         }
       });
     } catch (error) {
-      next();
+      next(error);
     }
   }
 }

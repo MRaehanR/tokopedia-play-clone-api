@@ -36,6 +36,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.22.9",
     "@types/joi": "^17.2.3",
+    "@types/mongoose": "^5.11.97",
     "@types/supertest": "^2.0.12",
     "@types/winston": "^2.4.4",
     "babel-jest": "^29.6.1",

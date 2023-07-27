@@ -22,7 +22,7 @@ class ProductController {
         }
       });
     } catch (error) {
-      next();
+      next(error);
     }
   }
 
@@ -49,7 +49,7 @@ class ProductController {
         data: data
       });
     } catch (error) {
-      next();
+      next(error);
     }
   }
 }

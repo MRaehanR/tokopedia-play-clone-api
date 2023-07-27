@@ -20,7 +20,7 @@ class CommentController {
         }
       });
     } catch (error) {
-      next();
+      next(error);
     }
   }
 
@@ -46,7 +46,7 @@ class CommentController {
         data: data
       });
     } catch (error) {
-      next();
+      next(error);
     }
   }
 }
