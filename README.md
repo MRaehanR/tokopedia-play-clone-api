@@ -97,6 +97,16 @@ Return Added Video
     example: http://localhost:3000/videos/jhkasd0jhkjh234ks
 - Headers\
   Content-Type: application/json
+- Request Body
+
+```
+{
+  "title": "Gebyar Tahun Baru",
+  "imgUrl": "https://localhost:3000/images/diskon-peripheral-gaming.jpg",
+  "videoUrl": "https://localhost:3000/images/bjabsd8b234jhbs"
+}
+```
+
 - Responses
 
 ##### ✅ 200 Success Added Video
@@ -220,6 +230,16 @@ Return Added Product
     example: http://localhost:3000/videos/videoID01
 - Headers\
   Content-Type: application/json
+- Request Body
+
+```
+{
+  "title": "Gebyar Tahun Baru",
+  "imgUrl": "https://localhost:3000/images/diskon-peripheral-gaming.jpg",
+  "price": 200000
+}
+```
+
 - Responses
 
 ##### ✅ 200 Success Added Product
