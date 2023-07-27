@@ -1,4 +1,3 @@
-import { loggerFile } from "../configs/logger.js";
 import CommentService from "../services/comment-service.js";
 
 class CommentController {
@@ -8,7 +7,7 @@ class CommentController {
       const username = req.body.username;
       const text = req.body.text;
 
-      const comment = await CommentService.addComment({ videoId, username, text });
+      const comment = await CommentService.addComsment({ videoId, username, text });
 
       res.success({
         code: 201,
@@ -21,7 +20,6 @@ class CommentController {
         }
       });
     } catch (error) {
-      loggerFile.error(error);
       next(error);
     }
   }
@@ -48,7 +46,6 @@ class CommentController {
         data: data
       });
     } catch (error) {
-      loggerFile.error(error);
       next(error);
     }
   }

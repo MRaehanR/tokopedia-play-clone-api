@@ -1,4 +1,3 @@
-import { loggerFile } from "../configs/logger.js";
 import VideoService from "../services/video-service.js";
 
 class VideoController {
@@ -18,7 +17,6 @@ class VideoController {
 
       res.success({ message: "Success Get All Videos", data: data });
     } catch (error) {
-      loggerFile.error(error);
       next(error);
     }
   }
@@ -42,7 +40,6 @@ class VideoController {
         }
       });
     } catch (error) {
-      loggerFile.error(error);
       next(error);
     }
   }
