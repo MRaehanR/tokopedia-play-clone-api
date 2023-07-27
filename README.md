@@ -91,10 +91,6 @@ Return All Videos
 
 Return Added Video
 
-- Path Params
-  - videoId\
-    required: true\
-    example: http://localhost:3000/videos/jhkasd0jhkjh234ks
 - Headers\
   Content-Type: application/json
 - Request Body
