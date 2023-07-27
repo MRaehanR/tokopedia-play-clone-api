@@ -11,8 +11,8 @@ class VideoController {
         data.push({
           id: video._id,
           title: video.title,
-          imgUrl: video.url_thumbnail,
-          videoUrl: video.url_video
+          imgUrl: video.imgUrl,
+          videoUrl: video.videoUrl
         });
       });
 
@@ -26,10 +26,10 @@ class VideoController {
   static async addVideo(req, res, next) {
     try {
       const title = req.body.title;
-      const urlThumbnail = req.body.url_thumbnail;
-      const urlVideo = req.body.url_video;
+      const imgUrl = req.body.imgUrl;
+      const videoUrl = req.body.videoUrl;
 
-      const video = await VideoService.addVideo({ title, urlThumbnail, urlVideo });
+      const video = await VideoService.addVideo({ title, imgUrl, videoUrl });
 
       res.success({
         code: 201,
@@ -37,8 +37,8 @@ class VideoController {
         data: {
           id: video._id,
           title: video.title,
-          imgUrl: video.url_thumbnail,
-          videoUrl: video.url_video
+          imgUrl: video.imgUrl,
+          videoUrl: video.videoUrl
         }
       });
     } catch (error) {

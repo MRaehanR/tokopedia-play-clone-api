@@ -7,8 +7,8 @@ class VideoService {
     return videos;
   }
 
-  static async addVideo({ title, urlThumbnail, urlVideo }) {
-    const video = new Video({ title: title, url_thumbnail: urlThumbnail, url_video: urlVideo });
+  static async addVideo({ title, imgUrl, videoUrl }) {
+    const video = new Video({ title: title, imgUrl: imgUrl, videoUrl: videoUrl });
     const videoSave = await video.save();
 
     return videoSave;

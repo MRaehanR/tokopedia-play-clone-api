@@ -3,7 +3,7 @@ import Comment from "../models/comment-model.js";
 class CommentService {
   static async addComment({ videoId, username, text }) {
     const comment = new Comment({
-      video_id: videoId,
+      videoId: videoId,
       username: username,
       text: text
     });
@@ -14,7 +14,7 @@ class CommentService {
   }
 
   static async getAllComments(videoId) {
-    const comments = await Comment.find({ video_id: videoId }).exec();
+    const comments = await Comment.find({ videoId: videoId }).exec();
 
     return comments;
   }

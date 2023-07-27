@@ -8,11 +8,11 @@ const videoSchema = mongoose.Schema(
       index: true,
       minLenght: 5
     },
-    url_thumbnail: {
+    imgUrl: {
       type: String,
       required: true
     },
-    url_video: {
+    videoUrl: {
       type: String,
       required: true
     }

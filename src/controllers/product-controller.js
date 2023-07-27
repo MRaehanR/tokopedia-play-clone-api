@@ -7,7 +7,7 @@ class ProductController {
       const videoId = req.params.videoId;
       const title = req.body.title;
       const price = req.body.price;
-      const imgUrl = req.body.url_img;
+      const imgUrl = req.body.imgUrl;
 
       const product = await ProductService.addProduct({ videoId, title, price, imgUrl });
 
@@ -17,7 +17,7 @@ class ProductController {
         data: {
           id: product._id,
           title: product.title,
-          imgUrl: product.url_img,
+          imgUrl: product.imgUrl,
           price: product.price,
           price_format: `Rp. ${product.price}`
         }
@@ -38,9 +38,9 @@ class ProductController {
       products.forEach((product) => {
         data.push({
           id: product._id,
-          videoId: product.video_id,
+          videoId: product.videoId,
           title: product.title,
-          imgUrl: product.url_thumbnail,
+          imgUrl: product.imgUrl,
           price: product.price,
           price_format: `Rp. ${product.price}`
         });

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const productSchema = mongoose.Schema(
   {
-    video_id: {
+    videoId: {
       type: mongoose.ObjectId,
       required: true
     },
@@ -10,7 +10,7 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true
     },
-    url_img: {
+    imgUrl: {
       type: String,
       required: true
     },
