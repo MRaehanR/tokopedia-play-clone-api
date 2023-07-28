@@ -415,6 +415,20 @@ Return Posted Comment
 }
 ```
 
+## How To Run
+
+1. Clone This Repo
+2. Install Node Packages
+```
+npm install
+```
+3. Install MongoDB Community
+4. Setup The Environment
+5. Run The Project
+```
+npm start
+```
+
 ## Swagger
 
 Default Swagger documentation api at [localhost:3000/docs/api](http://localhost:3000/docs/api)
