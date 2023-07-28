@@ -423,7 +423,7 @@ Return Posted Comment
 npm install
 ```
 3. Install MongoDB Community
-4. Setup The Environment
+4. Setup The Environment or Rename .env.example to .env
 5. Run The Project
 ```
 npm start
