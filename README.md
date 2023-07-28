@@ -7,6 +7,7 @@
   - [Videos](#videos)
   - [Products](#products)
   - [Comments](#comments)
+- [How To Run](#how-to-run)
 - [Swagger](#swagger)
 - [License](#license)
 
