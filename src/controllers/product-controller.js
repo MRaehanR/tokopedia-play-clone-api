@@ -1,12 +1,11 @@
 import ProductService from "../services/product-service.js";
+import validate from "../validations/index.js";
+import { addProductValidation, getAllProductByIdValidation } from "../validations/product-validation.js";
 
 class ProductController {
   static async addProduct(req, res, next) {
     try {
-      const videoId = req.params.videoId;
-      const title = req.body.title;
-      const price = req.body.price;
-      const imgUrl = req.body.imgUrl;
+      const { videoId, title, imgUrl, price } = validate(addProductValidation, { ...req.body, ...req.params });
 
       const product = await ProductService.addProduct({ videoId, title, price, imgUrl });
 
@@ -28,7 +27,7 @@ class ProductController {
 
   static async getAllProductsByVideoId(req, res, next) {
     try {
-      const videoId = req.params.videoId;
+      const { videoId } = validate(getAllProductByIdValidation, req.params);
 
       const products = await ProductService.getAllProducts(videoId);
       const data = [];

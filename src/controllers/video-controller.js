@@ -1,4 +1,6 @@
 import VideoService from "../services/video-service.js";
+import validate from "../validations/index.js";
+import { addVideoValidation } from "../validations/video-validation.js";
 
 class VideoController {
   static async getAllVideos(req, res, next) {
@@ -25,9 +27,7 @@ class VideoController {
 
   static async addVideo(req, res, next) {
     try {
-      const title = req.body.title;
-      const imgUrl = req.body.imgUrl;
-      const videoUrl = req.body.videoUrl;
+      const { title, imgUrl, videoUrl } = validate(addVideoValidation, req.body);
 
       const video = await VideoService.addVideo({ title, imgUrl, videoUrl });
 

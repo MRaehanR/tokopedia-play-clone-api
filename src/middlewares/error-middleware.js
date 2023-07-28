@@ -8,7 +8,7 @@ export const errorMiddleware = (error, req, res, next) => {
   }
 
   if (error instanceof ResponseError) {
-    res.error(error.message, error.code, error.data, error.errors).end();
+    res.error({ message: error.message, code: error.code, data: error.data, errors: error.errors }).end();
   } else if (error.name == "ValidationError") {
     const errors = {};
     Object.keys(error.errors).forEach((key) => {

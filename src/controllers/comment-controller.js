@@ -1,11 +1,11 @@
 import CommentService from "../services/comment-service.js";
+import { addCommentValidation, getAllCommentByVideoIdValidation } from "../validations/comment-validation.js";
+import validate from "../validations/index.js";
 
 class CommentController {
   static async addComment(req, res, next) {
     try {
-      const videoId = req.params.videoId;
-      const username = req.body.username;
-      const text = req.body.text;
+      const { videoId, username, text } = validate(addCommentValidation, { ...req.body, ...req.params });
 
       const comment = await CommentService.addComment({ videoId, username, text });
 
@@ -26,7 +26,7 @@ class CommentController {
 
   static async getAllCommentsByVideoId(req, res, next) {
     try {
-      const videoId = req.params.videoId;
+      const { videoId } = validate(getAllCommentByVideoIdValidation, req.params);
 
       const comments = await CommentService.getAllComments(videoId);
 
