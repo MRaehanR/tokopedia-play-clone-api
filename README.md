@@ -417,6 +417,11 @@ Return Posted Comment
 
 ## How To Run
 
+Prerequisite
+- Node^20.0.0
+- NPM^9.6.7
+- MongoDB^6.0.6
+
 1. Clone This Repo
 2. Install Node Packages
 ```
