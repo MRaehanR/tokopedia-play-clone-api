@@ -419,18 +419,33 @@ Return Posted Comment
 ## How To Run
 
 Prerequisite
-- Node^20.0.0
+
+- [Node^20.0.0](https://nodejs.org/en/download/current)
 - NPM^9.6.7
-- MongoDB^6.0.6
+- [MongoDB^6.0.6](https://www.mongodb.com/try/download/community)
 
 1. Clone This Repo
-2. Install Node Packages
+
+```
+git clone https://github.com/MRaehanR/tokopedia-play-clone-api.git
+```
+
+2. Go to The Project Folder
+
+```
+cd tokopedia-play-clone-api
+```
+
+3. Install Dependencies
+
 ```
 npm install
 ```
-3. Install MongoDB Community
-4. Setup The Environment or Rename .env.example to .env
-5. Run The Project
+
+4. Install MongoDB Community
+5. Setup The Environment or Rename .env.example to .env
+6. Run The Project
+
 ```
 npm start
 ```
