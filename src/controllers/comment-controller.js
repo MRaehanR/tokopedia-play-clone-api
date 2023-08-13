@@ -5,9 +5,9 @@ import validate from "../validations/index.js";
 class CommentController {
   static async addComment(req, res, next) {
     try {
-      const { videoId, username, text } = validate(addCommentValidation, { ...req.body, ...req.params });
+      const commentData = validate(addCommentValidation, req);
 
-      const comment = await CommentService.addComment({ videoId, username, text });
+      const comment = await CommentService.addComment(commentData);
 
       res.success({
         code: 201,
@@ -26,7 +26,7 @@ class CommentController {
 
   static async getAllCommentsByVideoId(req, res, next) {
     try {
-      const { videoId } = validate(getAllCommentByVideoIdValidation, req.params);
+      const { videoId } = validate(getAllCommentByVideoIdValidation, req);
 
       const comments = await CommentService.getAllComments(videoId);
 

@@ -1,15 +1,18 @@
 import { ResponseError } from "../errors/response-error.js";
 
 const validate = (schema, request) => {
-  const result = schema.validate(request, {
-    abortEarly: false,
-    allowUnkown: false,
-    errors: {
-      wrap: {
-        label: ""
+  const result = schema.validate(
+    { ...request.body, ...request.params, ...request.query },
+    {
+      abortEarly: false,
+      allowUnkown: false,
+      errors: {
+        wrap: {
+          label: ""
+        }
       }
     }
-  });
+  );
 
   if (result.error)
     throw new ResponseError({

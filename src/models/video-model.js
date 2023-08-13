@@ -15,6 +15,22 @@ const videoSchema = mongoose.Schema(
     videoUrl: {
       type: String,
       required: true
+    },
+    totalView: {
+      type: Number,
+      required: true
+    },
+    storeName: {
+      type: String,
+      required: true
+    },
+    discountCoupon: {
+      type: Boolean,
+      default: false
+    },
+    onlyAtLive: {
+      type: Boolean,
+      default: false
     }
   },
   { timestamps: true }

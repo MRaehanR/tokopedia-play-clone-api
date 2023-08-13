@@ -1,10 +1,9 @@
-{"level":"error"}
-{"level":"error"}
-[2023-07-27 04:45:43.795 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
-{"level":"error","timestamp":"2023-07-27 04:45:43.795 PM"}
-[2023-07-27 04:46:13.997 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
-[2023-07-27 04:46:34.838 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
-[2023-07-27 04:49:16.642 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
-[2023-07-27 04:59:28.260 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
-[2023-07-27 05:02:02.266 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 32)]
-[2023-07-27 05:03:27.080 PM] error:	CommentService.getAllCommentas is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 33)]
+[2023-07-27 11:16:17.723 PM] error:	CommentService.addComsment is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 10)]
+[2023-07-28 12:39:08.794 AM] error:	CommentService.addComsment is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 10)]
+[2023-07-28 12:39:38.501 AM] error:	CommentService.addComsment is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 10)]
+[2023-07-28 12:39:49.452 AM] error:	CommentService.addComsment is not a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/comment-controller.js (line: 10)]
+[2023-07-28 12:48:26.035 AM] error:	$regex has to be a string [/Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/node_modules/mongodb/lib/cmap/connection.js (line: 202)]
+[2023-07-28 02:37:23.420 AM] error:	req.body is not iterable [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/product-controller.js (line: 8)]
+[2023-08-13 03:10:05.748 PM] error:	Spread syntax requires ...iterable[Symbol.iterator] to be a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/video-controller.js (line: 31)]
+[2023-08-13 03:10:26.562 PM] error:	Spread syntax requires ...iterable[Symbol.iterator] to be a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/video-controller.js (line: 31)]
+[2023-08-13 03:40:39.708 PM] error:	Spread syntax requires ...iterable[Symbol.iterator] to be a function [file:///Users/raehan/Projects/GenerasiGIGIH/SKILLVUL/FullStack/HomeWorks/tokopedia-play-clone-api/src/controllers/video-controller.js (line: 30)]

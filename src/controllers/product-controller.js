@@ -5,9 +5,9 @@ import { addProductValidation, getAllProductByIdValidation } from "../validation
 class ProductController {
   static async addProduct(req, res, next) {
     try {
-      const { videoId, title, imgUrl, price } = validate(addProductValidation, { ...req.body, ...req.params });
+      const productData = validate(addProductValidation, req);
 
-      const product = await ProductService.addProduct({ videoId, title, price, imgUrl });
+      const product = await ProductService.addProduct(productData);
 
       res.success({
         code: 201,
@@ -27,7 +27,7 @@ class ProductController {
 
   static async getAllProductsByVideoId(req, res, next) {
     try {
-      const { videoId } = validate(getAllProductByIdValidation, req.params);
+      const { videoId } = validate(getAllProductByIdValidation, req);
 
       const products = await ProductService.getAllProducts(videoId);
       const data = [];

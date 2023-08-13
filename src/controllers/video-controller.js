@@ -27,9 +27,9 @@ class VideoController {
 
   static async addVideo(req, res, next) {
     try {
-      const { title, imgUrl, videoUrl } = validate(addVideoValidation, req.body);
+      const videoData = validate(addVideoValidation, req);
 
-      const video = await VideoService.addVideo({ title, imgUrl, videoUrl });
+      const video = await VideoService.addVideo(videoData);
 
       res.success({
         code: 201,

@@ -1,13 +1,8 @@
 import Product from "../models/product-model.js";
 
 class ProductService {
-  static async addProduct({ videoId, title, price, imgUrl }) {
-    const product = new Product({
-      videoId: videoId,
-      title: title,
-      price: price,
-      imgUrl: imgUrl
-    });
+  static async addProduct(productData) {
+    const product = new Product(productData);
 
     const productSave = await product.save();
 
