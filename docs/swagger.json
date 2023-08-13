@@ -1,0 +1,716 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "API Documentation for Tokopedia Play Clone API",
+    "version": "1.0.0",
+    "title": "Tokopedia Play Clone API",
+    "contact": {
+      "email": "muhamamdraehanrobban@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api"
+    }
+  ],
+  "paths": {
+    "/videos": {
+      "get": {
+        "tags": [
+          "videos"
+        ],
+        "summary": "Return List of Video",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "Gaming"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success Get All Videos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": "true"
+                    },
+                    "code": {
+                      "type": "number",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Success Get All Videos"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Videos"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Video Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorNotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "videos"
+        ],
+        "summary": "Return Added Video",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "example": "Gebyar Tahun Baru"
+                  },
+                  "imgUrl": {
+                    "type": "string",
+                    "example": "https://localhost:3000/images/diskon-peripheral-gaming.jpg"
+                  },
+                  "videoUrl": {
+                    "type": "string",
+                    "example": "https://localhost:3000/images/bjabsd8b234jhbs"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success Added Video",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": "true"
+                    },
+                    "code": {
+                      "type": "number",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Success Added Videos"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Videos"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to Add Video",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": "false"
+                    },
+                    "code": {
+                      "type": "number",
+                      "example": 400
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Failed to Add Video"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": []
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": []
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/{videoId}": {
+      "get": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Return List of Products",
+        "parameters": [
+          {
+            "name": "videoId",
+            "in": "path",
+            "description": "ID of video",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "VideoID01"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success Get All Products",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": "true"
+                    },
+                    "code": {
+                      "type": "number",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Success Get All Products"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Products"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Products Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorNotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Return Added Product",
+        "parameters": [
+          {
+            "name": "videoId",
+            "in": "path",
+            "description": "ID of video",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "VideoID01"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "example": "Gebyar Tahun Baru"
+                  },
+                  "imgUrl": {
+                    "type": "string",
+                    "example": "https://localhost:3000/images/diskon-peripheral-gaming.jpg"
+                  },
+                  "price": {
+                    "type": "number",
+                    "example": 200000
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success Added Product",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": "true"
+                    },
+                    "code": {
+                      "type": "number",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Success Added Product"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Products"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to Add Product",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": "false"
+                    },
+                    "code": {
+                      "type": "number",
+                      "example": 400
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Failed to Add Product"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": []
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": []
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/comments/{videoId}": {
+      "get": {
+        "tags": [
+          "comments"
+        ],
+        "summary": "Return List of Comments",
+        "parameters": [
+          {
+            "name": "videoId",
+            "in": "path",
+            "description": "ID of video",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "VideoID01"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success Get All Comments",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": "true"
+                    },
+                    "code": {
+                      "type": "number",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Success Get All Comments"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Comments"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Comments Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorNotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "comments"
+        ],
+        "summary": "Post New Comment",
+        "parameters": [
+          {
+            "name": "videoId",
+            "in": "path",
+            "description": "ID of video",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "VideoID01"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "example": "MRaehanR"
+                  },
+                  "text": {
+                    "type": "string",
+                    "example": "Mouse nomor 1 kak!"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success Posted Comment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": "true"
+                    },
+                    "code": {
+                      "type": "number",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Success Get All Comments"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Comments"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to Post Comment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": "false"
+                    },
+                    "code": {
+                      "type": "number",
+                      "example": 400
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Failed to Post Comment"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": []
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": []
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Videos": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "VideoID01"
+          },
+          "title": {
+            "type": "string",
+            "example": "Diskon Peripheral Gaming"
+          },
+          "imgUrl": {
+            "type": "string",
+            "example": "https://localhost:3000/images/diskon-peripheral-gaming.jpg"
+          },
+          "videoUrl": {
+            "type": "string",
+            "example": "https://localhost:3000/videos/jasd89023nasd90s"
+          }
+        }
+      },
+      "Products": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "ProductID01"
+          },
+          "videoId": {
+            "type": "string",
+            "example": "VideoID01"
+          },
+          "title": {
+            "type": "string",
+            "example": "Mouse Gaming Murah"
+          },
+          "imgUrl": {
+            "type": "string",
+            "example": "https://localhost:3000/images/mouse-gaming-murah.jpg"
+          },
+          "price": {
+            "type": "number",
+            "example": 20000
+          },
+          "priceFormat": {
+            "type": "string",
+            "example": "Rp. 20.000"
+          }
+        }
+      },
+      "Comments": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "CommentID01"
+          },
+          "videoId": {
+            "type": "string",
+            "example": "VideoID01"
+          },
+          "username": {
+            "type": "string",
+            "example": "MRaehanR"
+          },
+          "text": {
+            "type": "string",
+            "example": "Murah Banget Kak!"
+          },
+          "timestamp": {
+            "type": "string",
+            "example": "2023-07-26T12:03:18.273Z"
+          }
+        }
+      },
+      "ErrorNotFound": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "boolean",
+            "example": "false"
+          },
+          "code": {
+            "type": "number",
+            "example": 404
+          },
+          "message": {
+            "type": "string",
+            "example": "Data Not Found"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          }
+        }
+      },
+      "InternalServerError": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "boolean",
+            "example": "false"
+          },
+          "code": {
+            "type": "number",
+            "example": 500
+          },
+          "message": {
+            "type": "string",
+            "example": "Internal Server Error"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          }
+        }
+      }
+    }
+  }
+}
