@@ -1,3 +1,4 @@
+import CommentDTO from "../dtos/comment-dto.js";
 import CommentService from "../services/comment-service.js";
 import { addCommentValidation, getAllCommentByVideoIdValidation } from "../validations/comment-validation.js";
 import validate from "../validations/index.js";
@@ -12,12 +13,7 @@ class CommentController {
       res.success({
         code: 201,
         message: "Success Added Video",
-        data: {
-          id: comment._id,
-          username: comment.username,
-          text: comment.text,
-          timestamps: comment.createdAt
-        }
+        data: new CommentDTO(comment)
       });
     } catch (error) {
       next(error);
@@ -30,16 +26,7 @@ class CommentController {
 
       const comments = await CommentService.getAllComments(videoId);
 
-      const data = [];
-
-      comments.forEach((comment) => {
-        data.push({
-          id: comment._id,
-          username: comment.username,
-          text: comment.text,
-          timestamps: comment.createdAt
-        });
-      });
+      const data = comments.map((comment) => new CommentDTO(comment));
 
       res.success({
         message: "Success Get All Comments",
