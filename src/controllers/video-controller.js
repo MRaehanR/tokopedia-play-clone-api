@@ -1,3 +1,4 @@
+import VideoDTO from "../dtos/video-dto.js";
 import VideoService from "../services/video-service.js";
 import validate from "../validations/index.js";
 import { addVideoValidation } from "../validations/video-validation.js";
@@ -8,16 +9,8 @@ class VideoController {
       const search = req.query.search;
 
       const videos = await VideoService.getAllVideos(search);
-      const data = [];
 
-      videos.forEach((video) => {
-        data.push({
-          id: video._id,
-          title: video.title,
-          imgUrl: video.imgUrl,
-          videoUrl: video.videoUrl
-        });
-      });
+      const data = videos.map((video) => new VideoDTO(video));
 
       res.success({ message: "Success Get All Videos", data: data });
     } catch (error) {
@@ -34,12 +27,7 @@ class VideoController {
       res.success({
         code: 201,
         message: "Success Added Video",
-        data: {
-          id: video._id,
-          title: video.title,
-          imgUrl: video.imgUrl,
-          videoUrl: video.videoUrl
-        }
+        data: new VideoDTO(video)
       });
     } catch (error) {
       next(error);
