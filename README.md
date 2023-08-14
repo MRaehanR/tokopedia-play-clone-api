@@ -84,6 +84,9 @@ Return All Videos
   - search\
     required: false\
     example: http://localhost:3000/videos?search=gebyardiskon
+  - category\
+    required: false\
+    example: http://localhost:3000/videos?category=live
 - Headers\
   Content-Type: application/json
 - Responses
