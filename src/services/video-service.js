@@ -1,10 +1,18 @@
 import Video from "../models/video-model.js";
 
 class VideoService {
-  static async getAllVideos(search) {
-    search = search ?? "";
+  static async getAllVideos(queryReq) {
+    const query = {};
 
-    const videos = await Video.find({ title: { $regex: search, $options: "i" } }).exec();
+    if (queryReq.search) {
+      query.title = { $regex: queryReq.search, $options: "i" };
+    }
+
+    if (queryReq.category) {
+      query.categories = { $in: [queryReq.category] };
+    }
+
+    const videos = await Video.find(query).exec();
 
     return videos;
   }
