@@ -1,0 +1,35 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "src/server.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/videos",
+            "dest": "src/routes/api/video.js"
+        },
+        {
+            "src": "/api/products",
+            "dest": "src/routes/api/product.js"
+        },
+        {
+            "src": "/api/comments",
+            "dest": "src/routes/api/comment.js"
+        },
+        {
+            "src": "/api/(.*)",
+            "dest": "src/routes/api/index.js"
+        },
+        {
+            "src": "/docs/(.*)",
+            "dest": "src/routes/docs-route.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "src/routes/index.js"
+        }
+    ]
+}
