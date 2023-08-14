@@ -32,17 +32,16 @@ Database Schema for Tokopedia Play Clone
 
 ### Product Collection Schema
 
-| Field         | Type      |
-| ------------- | --------- |
-| `id`          | ObjectId  |
-| `videoId`     | ObjectId  |
-| `title`       | String    |
-| `imgUrl`      | String    |
-| `price`       | Number    |
-| `priceFormat` | String    |
-| `productUrl`  | String    |
-| `createdAt`   | Timestamp |
-| `updatedAt`   | Timestamp |
+| Field        | Type      |
+| ------------ | --------- |
+| `id`         | ObjectId  |
+| `videoId`    | ObjectId  |
+| `title`      | String    |
+| `imgUrl`     | String    |
+| `price`      | Number    |
+| `productUrl` | String    |
+| `createdAt`  | Timestamp |
+| `updatedAt`  | Timestamp |
 
 ### Comment Collection Schema
 
@@ -70,7 +69,7 @@ Schema for videos
     totalView: number
     storeName: string
     discountCoupon: boolean
-    onlyAtLiveonlyAtLive: boolean
+    onlyAtLive: boolean
     categories: array
     createdAt: timestamp
     updatedAt: timestamp
