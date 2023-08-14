@@ -15,9 +15,45 @@
 
 Database Schema for Tokopedia Play Clone
 
-![Table Videos](./docs/images/table-videos.png) ![Table Products](./docs/images/table-products.png)
+### Video Collection Schema
 
-![Table Comments](./docs/images/table-comments.png)
+| Field            | Type      |
+| ---------------- | --------- |
+| `id`             | ObjectId  |
+| `title`          | String    |
+| `imgUrl`         | String    |
+| `videoUrl`       | String    |
+| `totalView`      | Number    |
+| `discountCoupon` | Boolean   |
+| `onlyAtLive`     | Boolean   |
+| `categories`     | Array     |
+| `createdAt`      | Timestamp |
+| `updatedAt`      | Timestamp |
+
+### Product Collection Schema
+
+| Field         | Type      |
+| ------------- | --------- |
+| `id`          | ObjectId  |
+| `videoId`     | ObjectId  |
+| `title`       | String    |
+| `imgUrl`      | String    |
+| `price`       | Number    |
+| `priceFormat` | String    |
+| `productUrl`  | String    |
+| `createdAt`   | Timestamp |
+| `updatedAt`   | Timestamp |
+
+### Comment Collection Schema
+
+| Field       | Type      |
+| ----------- | --------- |
+| `id`        | ObjectId  |
+| `videoId`   | ObjectId  |
+| `username`  | String    |
+| `text`      | String    |
+| `createdAt` | Timestamp |
+| `updatedAt` | Timestamp |
 
 ## API List
 
