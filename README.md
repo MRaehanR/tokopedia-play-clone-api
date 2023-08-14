@@ -15,9 +15,44 @@
 
 Database Schema for Tokopedia Play Clone
 
-![Table Videos](./docs/images/table-videos.png) ![Table Products](./docs/images/table-products.png)
+### Video Collection Schema
 
-![Table Comments](./docs/images/table-comments.png)
+| Field            | Type      |
+| ---------------- | --------- |
+| `id`             | ObjectId  |
+| `title`          | String    |
+| `imgUrl`         | String    |
+| `videoUrl`       | String    |
+| `totalView`      | Number    |
+| `discountCoupon` | Boolean   |
+| `onlyAtLive`     | Boolean   |
+| `categories`     | Array     |
+| `createdAt`      | Timestamp |
+| `updatedAt`      | Timestamp |
+
+### Product Collection Schema
+
+| Field        | Type      |
+| ------------ | --------- |
+| `id`         | ObjectId  |
+| `videoId`    | ObjectId  |
+| `title`      | String    |
+| `imgUrl`     | String    |
+| `price`      | Number    |
+| `productUrl` | String    |
+| `createdAt`  | Timestamp |
+| `updatedAt`  | Timestamp |
+
+### Comment Collection Schema
+
+| Field       | Type      |
+| ----------- | --------- |
+| `id`        | ObjectId  |
+| `videoId`   | ObjectId  |
+| `username`  | String    |
+| `text`      | String    |
+| `createdAt` | Timestamp |
+| `updatedAt` | Timestamp |
 
 ## API List
 
@@ -31,6 +66,13 @@ Schema for videos
     title: string
     imgUrl: string
     videoUrl: string
+    totalView: number
+    storeName: string
+    discountCoupon: boolean
+    onlyAtLive: boolean
+    categories: array
+    createdAt: timestamp
+    updatedAt: timestamp
 }
 ```
 
@@ -55,10 +97,21 @@ Return All Videos
   "message": "Success Get All Videos",
   "data": [
     {
-      "id": "VideoID01",
-      "title": "Diskon Peripheral Gaming",
-      "imgUrl": "https://localhost:3000/images/diskon-peripheral-gaming.jpg",
-      "videoUrl": "https://localhost:3000/api/videos/asodiuhjas890u123"
+      "id": "64d90813ca0d755458124bf8",
+      "title": "Review Iphone 13 mini",
+      "imgUrl": "https://i.ytimg.com/vi/NXIPoWHl3q0/hqdefault.jpg",
+      "videoUrl": "https://youtu.be/t2Y7Ct6WxMM",
+      "totalView": 567,
+      "storeName": "Brian Solid",
+      "discountCoupon": true,
+      "onlyAtLive": true,
+      "categories": [
+          "live",
+          "apple",
+          "promo"
+      ],
+      "createdAt": "2023-08-13T16:42:59.297Z",
+      "updatedAt": "2023-08-13T16:42:59.297Z"
     }
   ]
 }
@@ -98,9 +151,14 @@ Return Added Video
 
 ```
 {
-  "title": "Gebyar Tahun Baru",
-  "imgUrl": "https://localhost:3000/images/diskon-peripheral-gaming.jpg",
-  "videoUrl": "https://localhost:3000/images/bjabsd8b234jhbs"
+  "title": "Unboxing Macbook m2",
+  "imgUrl": "https://i.ytimg.com/vi/c5WDE95oe08/maxresdefault.jpg",
+  "videoUrl": "https://youtu.be/JbySX-g-WcY",
+  "totalView": 876,
+  "storeName": "Chomp Pirampa",
+  "discountCoupon": false,
+  "onlyAtLive": false,
+  "categories": ["apple"]
 }
 ```
 
@@ -114,10 +172,16 @@ Return Added Video
   "code": 200,
   "message": "Success Added Video",
   "data": {
-    "id": "VideoID01",
-    "title": "Diskon Peripheral Gaming",
-    "imgUrl": "https://localhost:3000/images/diskon-peripheral-gaming.jpg",
-    "videoUrl": "https://localhost:3000/api/videos/asodiuhjas890u123"
+    "id": "64da3f1aa4355c184b57ddfb",
+    "title": "Unboxing Macbook m2",
+    "imgUrl": "https://i.ytimg.com/vi/c5WDE95oe08/maxresdefault.jpg",
+    "videoUrl": "https://youtu.be/JbySX-g-WcY",
+    "totalView": 876,
+    "storeName": "Chomp Pirampa",
+    "discountCoupon": false,
+    "onlyAtLive": false,
+    "createdAt": "2023-08-14T14:50:02.186Z",
+    "updatedAt": "2023-08-14T14:50:02.186Z"
   }
 }
 ```
@@ -158,6 +222,9 @@ Schema for Products
     imgUrl: string
     price: number
     priceFormat: string
+    productUrl: string
+    createdAt: timestamp
+    updatedAt: timestamp
 }
 ```
 
@@ -182,12 +249,15 @@ Return All Products
   "message": "Success Get All Products",
   "data": [
     {
-      "id": "ProductID01",
-      "videoId": "VideoID01",
-      "title": "Mouse Gaming Murah",
-      "imgUrl": "https://localhost:3000/images/mouse-gaming-murah.jpg",
+      "id": "64d8ce896ad855e4d65436ea",
+      "videoId": "64d8ce066ad855e4d65436e6",
+      "title": "Macbook",
+      "imgUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-spacegray-select-202206?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1664497359481",
       "price": 20000,
-      "priceFormat": "Rp. 20.000",
+      "priceFormat": "Rp. 20000",
+      "productUrl": "https://tokopedia.link/VdpQYtlleCb",
+      "createdAt": "2023-08-13T12:37:29.419Z",
+      "updatedAt": "2023-08-13T12:37:29.419Z"
     }
   ]
 }
@@ -248,12 +318,15 @@ Return Added Product
   "message": "Success Added Product",
   "data": [
     {
-      "id": "ProductID01",
-      "videoId": "VideoID01",
-      "title": "Mouse Gaming Murah",
-      "imgUrl": "https://localhost:3000/images/mouse-gaming-murah.jpg",
-      "price": 20000,
-      "priceFormat": "Rp. 20.000",
+      "id": "64da3f7da4355c184b57ddfd",
+      "videoId": "64da3f1aa4355c184b57ddfb",
+      "title": "Apple MacBook Air M1 Chip 2020 256GB 8GB",
+      "imgUrl": "https://images.tokopedia.net/img/cache/900/VqbcmM/2022/7/24/4eb93636-506b-4ab8-8ad5-0cd6edab0acd.png",
+      "price": 11899000,
+      "priceFormat": "Rp. 11899000",
+      "productUrl": "https://tokopedia.link/pxdl5KFAeCb",
+      "createdAt": "2023-08-14T14:51:41.632Z",
+      "updatedAt": "2023-08-14T14:51:41.632Z"
     }
   ]
 }
@@ -293,7 +366,8 @@ Schema for Comments
     videoId: ObjectId
     username: string
     text: string
-    timestamp: string
+    createdAt: timestamp
+    updatedAt: timestamp
 }
 ```
 
@@ -322,7 +396,8 @@ Return All Comments
       "videoId": "VideoID01",
       "username": "MRaehanR",
       "text": "Murah Banget Kak!",
-      "timestamp": "2023-07-26T12:03:18.273Z"
+      "createdAt": "2023-08-13T18:02:44.809Z",
+      "updatedAt": "2023-08-13T18:02:44.809Z"
     }
   ]
 }

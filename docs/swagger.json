@@ -592,6 +592,30 @@
           "videoUrl": {
             "type": "string",
             "example": "https://localhost:3000/videos/jasd89023nasd90s"
+          },
+          "totalView": {
+            "type": "number",
+            "example": "412"
+          },
+          "storeName": {
+            "type": "string",
+            "example": "Toko Bagus"
+          },
+          "discountCoupon": {
+            "type": "boolean",
+            "example": true
+          },
+          "onlyAtLive": {
+            "type": "boolean",
+            "example": true
+          },
+          "createdAt": {
+            "type": "string",
+            "example": "2023-08-13T16:42:59.297Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "example": "2023-08-13T16:42:59.297Z"
           }
         }
       },
@@ -621,6 +645,18 @@
           "priceFormat": {
             "type": "string",
             "example": "Rp. 20.000"
+          },
+          "productUrl": {
+            "type": "string",
+            "example": "https://tokopedia.link/VdpQYtlleCb"
+          },
+          "createdAt": {
+            "type": "string",
+            "example": "2023-08-13T16:42:59.297Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "example": "2023-08-13T16:42:59.297Z"
           }
         }
       },
@@ -643,9 +679,13 @@
             "type": "string",
             "example": "Murah Banget Kak!"
           },
-          "timestamp": {
+          "createdAt": {
             "type": "string",
-            "example": "2023-07-26T12:03:18.273Z"
+            "example": "2023-08-13T16:42:59.297Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "example": "2023-08-13T16:42:59.297Z"
           }
         }
       },
