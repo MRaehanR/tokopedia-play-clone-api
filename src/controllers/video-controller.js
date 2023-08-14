@@ -6,9 +6,9 @@ import { addVideoValidation } from "../validations/video-validation.js";
 class VideoController {
   static async getAllVideos(req, res, next) {
     try {
-      const search = req.query.search;
+      const query = req.query;
 
-      const videos = await VideoService.getAllVideos(search);
+      const videos = await VideoService.getAllVideos(query);
 
       const data = videos.map((video) => new VideoDTO(video));
 
