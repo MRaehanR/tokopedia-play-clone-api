@@ -31,7 +31,17 @@
             "required": false,
             "schema": {
               "type": "string",
-              "example": "Gaming"
+              "example": "obral"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Category query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "live"
             }
           }
         ],
@@ -611,6 +621,13 @@
           "onlyAtLive": {
             "type": "boolean",
             "example": true
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "live"
+            }
           },
           "createdAt": {
             "type": "string",
