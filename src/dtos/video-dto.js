@@ -8,6 +8,7 @@ class VideoDTO {
     this.storeName = video.storeName;
     this.discountCoupon = video.discountCoupon;
     this.onlyAtLive = video.onlyAtLive;
+    this.categories = video.categories;
     this.createdAt = video.createdAt;
     this.updatedAt = video.updatedAt;
   }

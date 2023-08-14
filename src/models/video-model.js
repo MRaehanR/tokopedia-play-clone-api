@@ -31,6 +31,10 @@ const videoSchema = mongoose.Schema(
     onlyAtLive: {
       type: Boolean,
       default: false
+    },
+    categories: {
+      type: Array,
+      required: true
     }
   },
   { timestamps: true }
