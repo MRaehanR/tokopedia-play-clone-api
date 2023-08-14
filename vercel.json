@@ -1,5 +1,4 @@
 {
-    "version": 2,
     "builds": [
         {
             "src": "src/server.js",
@@ -31,9 +30,5 @@
             "src": "/(.*)",
             "dest": "src/routes/index.js"
         }
-    ],
-    "env": {
-        "ENV": "development",
-        "PORT": 3001
-    }
+    ]
 }
