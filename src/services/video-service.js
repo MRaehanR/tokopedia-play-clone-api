@@ -9,7 +9,7 @@ class VideoService {
     }
 
     if (queryReq.category) {
-      query.categories = { $in: [queryReq.category] };
+      query.categories = { $in: [queryReq.category.toLowerCase()] };
     }
 
     const videos = await Video.find(query).exec();
