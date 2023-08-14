@@ -12,7 +12,7 @@ class CommentController {
 
       res.success({
         code: 201,
-        message: "Success Added Video",
+        message: "Success Post Comment",
         data: new CommentDTO(comment)
       });
     } catch (error) {
